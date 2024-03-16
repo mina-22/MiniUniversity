@@ -1,0 +1,31 @@
+﻿ @model CourseProf
+
+<h1>
+    Update  Course
+</h1>
+<form asp-action="Update" method="post">
+
+    <div class="mb-3 mt-5">
+        <label asp-for="course.CourseName" class="form-label">Name Course</label>
+        <input type="text" class="form-control" asp-for="course.CourseName" placeholder="Enter Name">
+    </div>
+    <input type="hidden" asp-for="course.CourseId"/>
+    <div class="mb-3 col-lg-6">
+        <label asp-for="course.ProfessorId" class="form-label">Professor</label>
+        <select class="form-select"
+                asp-for="course.ProfessorId">
+            @{
+
+                foreach (var t in Model.profs)
+                {
+                    <option value="@t.ProfessorId">@t.ProfessorName</option>
+                }
+            }
+
+        </select>
+    </div>
+    <div class="col-lg-12 d-flex justify-content-center">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

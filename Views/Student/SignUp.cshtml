@@ -1,0 +1,32 @@
+﻿@model Student
+<h1 class="text-center">Sign Up Now</h1>
+
+
+<div>
+
+	<form class="form" asp-controller="Student" asp-action="SignUp" method="post">
+		<div class="mb-3">
+			<label asp-for="FirstName" class="form-label">First Name</label>
+			<input type="text" class="form-control" asp-for="FirstName" placeholder="Enter First Name">
+		</div>
+		<div class="mb-3">
+			<label asp-for="LastName" class="form-label">Last Name</label>
+			<input type="text" class="form-control" asp-for="LastName" placeholder="Enter Last Name">
+		</div>
+		<div class="mb-3">
+			<label asp-for="Email" class="form-label">Email</label>
+			<input type="email" class="form-control" asp-for="Email" placeholder="Enter Email Address">
+		</div>
+		<span class="text-danger">@ViewData["valid"]</span>
+		<div class="mb-3">
+			<label asp-for="Major" class="form-label">Major</label>
+			<input type="email" class="form-control" asp-for="Major" placeholder="Enter Major">
+		</div>
+		<a style="text-decoration:none; color:red; cursor:pointer;" asp-action="Regist" asp-controller="Student">Log In</a>
+		<div class="col-lg-12 d-flex justify-content-center">
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+
+	</form>
+</div>

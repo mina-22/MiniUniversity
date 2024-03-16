@@ -1,0 +1,23 @@
+﻿@model Student
+
+<h1 class="text-center">Log In Now</h1>
+<h2 style="color:green;">@TempData["Signed"]</h2>
+<div>
+	<span class="text-center text-danger">@ViewData["valid"]</span>
+	<form class="form" asp-controller="Student"  asp-action="Regist">
+		<div class="mb-3">
+			<label asp-for="FirstName" class="form-label">First Name</label>
+			<input asp-for="FirstName" type="text" class="form-control" placeholder="Enter User First Name">
+		</div>
+		<div class="mb-3">
+			<label asp-for="Email" class="form-label">Email</label>
+			<input asp-for="Email" type="email" class="form-control" placeholder="Enter Email Address">
+		</div>
+		<a style="text-decoration:none; color:red; cursor:pointer;" asp-action="SignUp" asp-controller="Student">Sign Up</a>
+		<div class="col-lg-12 d-flex justify-content-center">
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+
+	</form>
+</div>
